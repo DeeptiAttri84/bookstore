@@ -48,7 +48,7 @@ public class UserController {
         
       }
       @PostMapping("/adduser")
-      public User addUser(@RequestBody User user){
+      public List<User> addUser(@RequestBody List<User> user){
          return userService.adduser(user);
 
       }
@@ -61,6 +61,11 @@ public class UserController {
       public void  deleteUser(@PathVariable("id") String id ){
          userService.deleteUser(id);
 
+      }
+
+      @PutMapping("/bookReturn/{userid}/{bookid}")
+      public User bookReturn(@PathVariable("userid") String userid,@PathVariable("bookid") String bookid) {
+         return userService.bookReturn(userid,bookid);
       }
       
     

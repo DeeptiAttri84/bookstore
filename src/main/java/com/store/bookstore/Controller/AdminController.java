@@ -30,7 +30,7 @@ public class AdminController {
     }
 
     @PostMapping("/books")
-    public Book addBook(@RequestBody Book book) {
+    public List<Book> addBook(@RequestBody List<Book> book) {
         return bookService.addBook(book);
     }
 
